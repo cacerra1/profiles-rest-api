@@ -6,7 +6,7 @@ from profiles_api import serializers
 
 
 class HelloApiView(APIView):
-    ''' This is what connects us to the serializer we connectedßå'''
+    ''' This is what connects us to the serializer we created'''
     serializer_class = serializers.HelloSerializer
 
     def get(self, request, format = None):
@@ -31,3 +31,18 @@ class HelloApiView(APIView):
                 serializer.errors,
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+    def put(self, request, pk=None):
+        '''handling updating an object'''
+
+        return Response({"method": 'PUT'})
+
+    def patch(self, request, pk=None):
+        '''handling partial updating  of an object'''
+
+        return Response({"method": 'PATCH'})
+
+    def delete(self, request, pk=None):
+        '''delete an object'''
+
+        return Response({"method": 'DELETE'})
