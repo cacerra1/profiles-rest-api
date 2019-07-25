@@ -6,6 +6,8 @@ from profiles_api import serializers
 
 
 class HelloApiView(APIView):
+    ''' This is what connects us to the serializer we connectedßå'''
+    serializer_class = serializers.HelloSerializer
 
     def get(self, request, format = None):
         """Returns a list of APIView features"""
